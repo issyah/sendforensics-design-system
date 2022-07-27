@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
-
+import '../src/base.css';
 
 import "@fontsource/source-sans-pro/300.css";
 import "@fontsource/source-sans-pro/400.css";

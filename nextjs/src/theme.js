@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import { primary, secondary, white, success, error,info } from './colors';
-
+import { grey } from '@mui/material/colors';
 // Create a theme instance.
 const theme = createTheme({
   palette: {
@@ -14,6 +14,7 @@ const theme = createTheme({
       main: '#fafafa',
       white: '#FFFFFF',
     },
+    grey:grey
   },
   shape:{
     borderRadius:8
@@ -63,6 +64,19 @@ const theme = createTheme({
        }
       }
     },
+    MuiButtonGroup:{
+      defaultProps:{
+        disableRipple: true,
+        disableElevation: true,
+      }
+    },
+    MuiToggleButton:{
+      styleOverrides:{
+        root:{
+          textTransform: 'none'
+        }
+      }
+    },
     MuiButton:{
       defaultProps:{
         disableElevation:true,
@@ -74,8 +88,8 @@ const theme = createTheme({
           borderRadius: 8,
         }
       },
-      // new variants, softer button look 
       variants:[
+        // new variants, softer button look 
         {
           props: {variant: 'soft'},
           style: {
@@ -123,6 +137,28 @@ const theme = createTheme({
             color: info.softContrastText,
             '&:hover':{
               backgroundColor: info.softDark
+            }
+          }
+        },
+        // default white 
+        {
+          props:{variant: 'default' , color:'white'},
+          style:{
+            backgroundColor: '#fff',
+            color: 'rgba(0, 0, 0, 0.87)',
+            borderWidth: 1,
+            borderColor: grey[300],
+            borderStyle: 'solid'
+          }
+        },
+        {
+          props:{variant:'default', color: 'black'},
+          style:{
+            backgroundColor: 'rgba(0,0,0,0.87)',
+            color: '#fff',
+            '&:hover':{
+              backgroundColor: 'rgba(0,0,0,1)',
+              color: '#fff'
             }
           }
         }

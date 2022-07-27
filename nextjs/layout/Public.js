@@ -14,6 +14,10 @@ export default function Public(props){
             href: '/pricing',
             variant: 'soft',
             noStyle: true,
+          },
+          {
+            label: 'Login',
+            href: '/login',
           }
         ]}
         navLeft={[

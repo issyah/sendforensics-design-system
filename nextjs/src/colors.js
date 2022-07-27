@@ -3,10 +3,10 @@
 */
 
 const primary = {
-  main: '#4eadd3',
+  main: '#005580',
   softLight: '#edf7fb',
   softDark: '#dceff6',
-  softContrastText: '#2f687f',
+  softContrastText: '#005580',
 }
 const secondary = { 
   main: '#ddd',

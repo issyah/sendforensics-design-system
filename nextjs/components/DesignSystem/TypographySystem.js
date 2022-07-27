@@ -1,5 +1,7 @@
 
-import { Typography } from "@mui/material"
+import { Typography,Box } from "@mui/material";
+import BorderedBox from "../BorderedBox";
+import Anchor from "../Anchor";
 export default function TypographySystem(){
   const typography_variant = {
     h1: 'Heading 1',
@@ -16,15 +18,28 @@ export default function TypographySystem(){
 
   return (
     <div>
-
-      {Object.keys(typography_variant).map((item) =>
+      <Anchor
+        id={'typography-section'}
+      >
         <Typography
-          variant={item}
-          key={item}
+        variant={'h4'}
         >
-          {typography_variant[item]}
+          Typography
         </Typography>
-      )}
+        <Typography>
+          Incoporating a typographic scale to our font sizes. The base size for the font is 16px / 1rem.
+        </Typography>
+      </Anchor>
+      <BorderedBox>
+        {Object.keys(typography_variant).map((item) =>
+          <Typography
+            variant={item}
+            key={item}
+          >
+            {typography_variant[item]}
+          </Typography>
+        )}
+      </BorderedBox>
     </div>
 
   )

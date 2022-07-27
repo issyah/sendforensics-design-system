@@ -2,9 +2,10 @@ import {
   Button,
   Typography,
   Stack,
-  Box
-} from '@mui/material'
-
+  Box,
+  Paper
+} from '@mui/material';
+import BorderedBox from '../BorderedBox';
 export default function ButtonSystem(){
   const buttonArray = [
     'primary',
@@ -15,70 +16,95 @@ export default function ButtonSystem(){
   ]
   return (
     <Box>
-      <Typography variant={'h6'} gutterBottom>
-        Filled Buttons
+      <Typography variant={'body1'} gutterBottom>
+        Contained Buttons
       </Typography>
-      <Stack spacing={1} direction="row" sx={{mb:2}}>
-        {buttonArray.map((item) => 
-          <Button 
-            variant="contained" 
-            color={item} 
-            key={item}
-            sx={{
-              textTransform: 'capitalize'
-            }}
-          >{item}</Button>
-        )}
-      </Stack>
-      <Typography variant={'h6'} gutterBottom>
+      <BorderedBox>
+        <Stack spacing={1} direction="row">
+          {buttonArray.map((item) => 
+            <Button 
+              variant="contained" 
+              color={item} 
+              key={item}
+              sx={{
+                textTransform: 'capitalize'
+              }}
+            >{item}</Button>
+          )}
+        </Stack>
+      </BorderedBox>
+      <Typography variant={'body1'} gutterBottom>
         Outlined Buttons
       </Typography>
-      <Stack spacing={1} direction="row" sx={{mb:2}}>
-        {buttonArray.map((item) => 
-          <Button 
-            variant="outlined" 
-            color={item} 
-            key={item}
-            sx={{
-              textTransform: 'capitalize'
-            }}
-          >{item}</Button>
+      <BorderedBox
+        sx={{
+          bgcolor: 'grey.900'
+        }}
+      >
+        <Stack spacing={1} direction="row" >
+          {buttonArray.map((item) => 
+            <Button 
+              variant="outlined" 
+              color={item} 
+              key={item}
+              sx={{
+                textTransform: 'capitalize'
+              }}
+            >{item}</Button>
+            )}
+        </Stack>
+      </BorderedBox>
+      <Typography variant={'body1'} gutterBottom>Text Buttons</Typography>
+      <BorderedBox
+        sx={{
+          bgcolor: 'grey.900'
+        }}
+      >
+        <Stack spacing={1} direction="row">
+          {buttonArray.map((item) => 
+            <Button 
+              variant="text" 
+              color={item} 
+              key={item}
+              sx={{
+                textTransform: 'capitalize'
+              }}
+            >{item}</Button>
+            )}
+        </Stack>
+      </BorderedBox>
+      <Typography variant={'body1'} gutterBottom>Soft Buttons</Typography>
+      <BorderedBox>
+        <Stack spacing={1} direction="row">
+          {buttonArray.map((item) => 
+            <Button
+              variant={'soft'}
+              color={item}
+              key={item}
+              sx={{
+                textTransform: 'capitalize'
+              }}
+            >
+              {item}
+            </Button>
           )}
-      </Stack>
-      <Typography variant={'h6'} gutterBottom>Text Buttons</Typography>
-      <Stack spacing={1} direction="row" sx={{mb:2}}>
-        {buttonArray.map((item) => 
-          <Button 
-            variant="text" 
-            color={item} 
-            key={item}
-            sx={{
-              textTransform: 'capitalize'
-            }}
-          >{item}</Button>
-          )}
-      </Stack>
-      <Typography variant={'h6'} gutterBottom>Soft Buttons</Typography>
-      <Stack spacing={1} direction="row" sx={{mb:2}}>
-        {buttonArray.map((item) => 
-          <Button
-            variant={'soft'}
-            color={item}
-            key={item}
-            sx={{
-              textTransform: 'capitalize'
-            }}
-          >
-            {item}
-          </Button>
-        )}
-      </Stack>
-      <Typography variant={'h6'} gutterBottom>Sizes</Typography>
-      <Stack spacing={1}  sx={{mb:2, width: '50%'}}>
-      <Button variant='contained' size="small">Small</Button>
-        <Button variant='contained' size="medium">Small</Button>
-        <Button variant='contained' size="large">Small</Button>
-      </Stack>
+        </Stack>
+      </BorderedBox>
+      <Typography gutterBottom>Default buttons</Typography>
+      <BorderedBox>
+        <Stack spacing={1} direction="row">
+          <Button variant='default' color='white'>White</Button>
+          <Button variant='default' color='black'>Black</Button>
+        </Stack>
+      </BorderedBox>
+      <Typography variant={'body1'} gutterBottom>Sizes</Typography>
+      <BorderedBox>
+        <Stack spacing={1} >
+          <Button variant='contained' size="small">Small</Button>
+          <Button variant='contained' size="medium">Small</Button>
+          <Button variant='contained' size="large">Small</Button>
+        </Stack>
+      </BorderedBox>
     </Box>
   )
 }

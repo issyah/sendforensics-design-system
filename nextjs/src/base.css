@@ -1,0 +1,6 @@
+/* create an offset based on fixed navbar */
+.anchor{
+  position:relative;
+  top: 66px;
+  display:block;
+}

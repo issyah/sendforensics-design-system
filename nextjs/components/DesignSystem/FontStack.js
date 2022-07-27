@@ -3,56 +3,47 @@ import {
   Typography,
   Paper
 } from '@mui/material';
-
+import BorderedBox from '../BorderedBox';
+import Anchor from '../Anchor';
 export default function FontStack(){
   return (
     <>
-    <Box
-      sx={{
-        mb: 2,
-      }}
+    <Anchor
+      id={'font-section'}
     >
       <Typography 
-        variant={'h5'}
-        id={'font-section'}
+        variant={'h4'}
       >
         Font stack
       </Typography>
-    </Box>
+    </Anchor>
 
     <Typography
       variant={'h6'}
     >
       Source Sans Pro
     </Typography>
-    <Paper
-      sx={{
-        p:4,
-        bgcolor: 'neutral.main',
-        mb:4,
-      }}
-      elevation={0}
-    >
+    <BorderedBox>
       <Box>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
       </Box>
-    </Paper>
+    </BorderedBox>
     <Typography
       variant={'h6'}
     >
       Source Code Pro
     </Typography>
-    <Paper
+    <Box
       sx={{
-        p:4,
-        bgcolor: 'neutral.main',
-        mb:4,
-        fontFamily: '"Source Code Pro", monospace'
+        fontFamily: 'Source Code Pro',
+        p: 4,
+        color: '#fff',
+        bgcolor: 'grey.900',
+        borderRadius:2,
       }}
-      elevation={0}
     >
       console.log('Hello World');
-    </Paper>
+    </Box>
     </>
   )
 }

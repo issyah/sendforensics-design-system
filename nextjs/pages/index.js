@@ -10,16 +10,13 @@ import Public from '../layout/Public';
 export default function Index() {
   return (
     <Public>
-       <Container maxWidth="sm">
+       <Container maxWidth="lg">
         <Box sx={{ my: 4 }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Next.js example
+          <Typography variant="h2" component="h1" gutterBottom>
+            Hello world
           </Typography>
-          <Link href="/about" color="secondary">
-            Go to the about page
-          </Link>
-          <ProTip />
-          <Copyright />
+          {/* <ProTip /> */}
+          {/* <Copyright /> */}
         </Box>
       </Container>     
     </Public>

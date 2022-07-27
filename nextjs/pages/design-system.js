@@ -3,29 +3,39 @@
  * @description: A basic design system for the source of truth. To follow exactly the components and design to a pixel accuracy. */ 
 
 import {Paper, Container, Grid, Card, Box, Typography} from '@mui/material';
-import Logo from '../public/logo.svg';
-import Image from 'next/image';
 import TypographySystem from '../components/DesignSystem/TypographySystem';
 import LeftDrawerLayout from '../layout/LeftDrawerLayout'
 import FontStack from '../components/DesignSystem/FontStack';
 import ButtonSystem from '../components/DesignSystem/ButtonSystem';
+import ButtonGroupSystem from '../components/DesignSystem/ButtonGroupSystem';
+import ToggleButtonSystem from '../components/DesignSystem/ToggleButtonsSystem';
+import MenuSystem from '../components/DesignSystem/MenuSystem';
+import Anchor from '../components/Anchor';
 export default function DesignSystem(){
   const sideNav = [
     {
       href: '#font-section',
-      label: 'Font Stack',
+      label: 'Font stack',
     },
     {
       href: '#typography-section',
-      label: 'Typography Scale'
+      label: 'Typography scale'
     },
     {
       href: '#button-section',
       label: 'Buttons'
     },
     {
-      href: '#layout-section',
-      label: 'Layout'
+      href: '#button-group-section',
+      label: 'Button groups'
+    },
+    {
+      href: '#toggle-button-section',
+      label: 'Toggle Buttons'
+    },
+    {
+      href: '#menu-section',
+      label: 'Menu'
     }
   ];
   const nav = [
@@ -47,7 +57,8 @@ export default function DesignSystem(){
           }}
         >
           <Typography
-            variant={'h4'}
+            variant={'h2'}
+            component={'h1'}
             gutterBottom
           >
             SendForensics Design System
@@ -55,47 +66,33 @@ export default function DesignSystem(){
           <Box sx={{
             mb:4
           }}>
-            A complete set of standards intended to manage design at scale using reusable components. The primary benefits of designs systems is the ability to replicate designs quickly by utilizing readily available components.
+            A complete set of standards intended to manage design at scale using reusable components. The primary benefits of designs systems is the ability to replicate designs quickly by utilizing readily available components. The components are built on top <a href="https://mui.com/" rel='noopener' target={'_blank'}>MUI React framework</a>.
           </Box>
           <FontStack/>
-          <Typography
-            variant={'h5'}
-            id={'typography-section'}
-          >
-            Typography
-          </Typography>
-          <Box
-            sx={{
-              mb:4
-            }}
-          >Incoporating a typographic scale to our font sizes. The base size for the font is 16px / 1rem.</Box>
-          <Paper
-            elevation={0}
-            sx={{
-              p: 4,
-              bgcolor: 'neutral.main',
-              mb:4,
-            }}
-          >
-            <TypographySystem/>
-          </Paper>
+          <Box sx={{mb:4}}></Box>
+          <TypographySystem/>
           <Box
             sx={{
               mb:4
             }}
           >
-            <Typography
-              variant={'h5'}
+            <Anchor
               id={'button-section'}
             >
-              Buttons
-            </Typography>
-            <Typography gutterBottom>
-              Buttons allow users to take actions and make choices in the system.
-            </Typography>
+              <Typography
+                variant={'h4'}
+              >
+                Buttons
+              </Typography>
+              <Typography>
+                Buttons allow users to take actions and make choices in the system.
+              </Typography>
+            </Anchor>
           </Box>
           <ButtonSystem/>
-
+          <ButtonGroupSystem/>
+          <ToggleButtonSystem/>
+          <MenuSystem/>
         </Container>
       </Paper>
     </LeftDrawerLayout>
