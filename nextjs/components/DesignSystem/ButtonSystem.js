@@ -12,6 +12,7 @@ export default function ButtonSystem(){
     'secondary',
     'success',
     'error',
+    'warning',
     'info',
   ]
   return (

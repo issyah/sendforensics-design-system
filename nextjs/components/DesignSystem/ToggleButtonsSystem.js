@@ -19,11 +19,15 @@ export default function ToggleButtonSystem(){
   }
 
   const handleMultiSelect = (event, newMultiSelect) => {
-    setMultiSelect(newMultiSelect);
+    if(newMultiSelect !== null){
+      setMultiSelect(newMultiSelect);
+    }
   }
 
   const handleSegmentedSelect = (event, newSelect) => {
-    setSegmentedSelect(newSelect);
+    if(newSelect !== null){
+      setSegmentedSelect(newSelect);
+    }
   }
 
   return (

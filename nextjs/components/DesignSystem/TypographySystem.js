@@ -26,7 +26,7 @@ export default function TypographySystem(){
         >
           Typography
         </Typography>
-        <Typography>
+        <Typography gutterBottom>
           Incoporating a typographic scale to our font sizes. The base size for the font is 16px / 1rem.
         </Typography>
       </Anchor>

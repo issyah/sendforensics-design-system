@@ -9,10 +9,10 @@ const primary = {
   softContrastText: '#005580',
 }
 const secondary = { 
-  main: '#ddd',
-  softLight: '#fcfcfc',
-  softDark: '#f8f8f8',
-  softContrastText: '#6f6f6f'
+  main: '#ffa726',
+  softLight: '#fff6e9',
+  softDark: '#ffedd4',
+  softContrastText: '#ffa726'
 }
 const white = {
   main: '#fff',
@@ -23,7 +23,11 @@ const success = {
   softDark: '#d5e5d6',
   softContrastText: '#2e7d32',
 }
-
+const warning = {
+  softLight: '#fdf0e6',
+  softDark: '#fbe2cc',
+  softContrastText: '#ed6c02'
+}
 const error = {
   softLight: '#fbeaea',
   softDark: '#f6d5d5',
@@ -40,5 +44,6 @@ export {
   white,
   success,
   error,
-  info
-};
+  info,
+  warning
+}

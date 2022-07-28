@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { primary, secondary, white, success, error,info } from './colors';
+import { primary, secondary, white, success, error,info, warning } from './colors';
 import { grey } from '@mui/material/colors';
 // Create a theme instance.
 const theme = createTheme({
@@ -127,6 +127,16 @@ const theme = createTheme({
             color: error.softContrastText,
             '&:hover':{
               backgroundColor: error.softDark
+            }
+          }
+        },
+        {
+          props: {variant: 'soft', color: 'warning'},
+          style: {
+            backgroundColor: warning.softLight,
+            color: warning.softContrastText,
+            '&:hover':{
+              backgroundColor: warning.softDark
             }
           }
         },

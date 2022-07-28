@@ -27,7 +27,7 @@ export default function ButtonGroupSystem(){
       <BorderedBox>
           <ButtonGroup variant={'contained'}>
             {[...Array(3)].map((item) =>
-              <Button>Primary</Button>
+              <Button key={item}>Primary</Button>
             )}
           </ButtonGroup>
       </BorderedBox>
@@ -37,7 +37,7 @@ export default function ButtonGroupSystem(){
       <BorderedBox>
         <ButtonGroup variant={'outlined'} >
           {[...Array(3)].map((item) => 
-            <Button>Primary</Button>
+            <Button key={item}>Primary</Button>
           )}
         </ButtonGroup>
       </BorderedBox>
@@ -47,7 +47,7 @@ export default function ButtonGroupSystem(){
       <BorderedBox>
         <ButtonGroup variant={'text'}>
           {[...Array(3)].map((item) => 
-            <Button>Primary</Button>
+            <Button key={item}>Primary</Button>
           )}
         </ButtonGroup>
       </BorderedBox>

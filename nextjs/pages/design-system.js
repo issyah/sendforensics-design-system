@@ -9,10 +9,15 @@ import FontStack from '../components/DesignSystem/FontStack';
 import ButtonSystem from '../components/DesignSystem/ButtonSystem';
 import ButtonGroupSystem from '../components/DesignSystem/ButtonGroupSystem';
 import ToggleButtonSystem from '../components/DesignSystem/ToggleButtonsSystem';
+import ColorSystem from '../components/DesignSystem/ColorSystem';
 import MenuSystem from '../components/DesignSystem/MenuSystem';
 import Anchor from '../components/Anchor';
 export default function DesignSystem(){
   const sideNav = [
+    {
+      href: '#color-section',
+      label: 'Colors'
+    },
     {
       href: '#font-section',
       label: 'Font stack',
@@ -42,6 +47,10 @@ export default function DesignSystem(){
     {
       href: '/',
       label: 'Home'
+    },
+    {
+      href: '/signin',
+      label: 'Sign in'
     }
   ]
   return (
@@ -68,6 +77,7 @@ export default function DesignSystem(){
           }}>
             A complete set of standards intended to manage design at scale using reusable components. The primary benefits of designs systems is the ability to replicate designs quickly by utilizing readily available components. The components are built on top <a href="https://mui.com/" rel='noopener' target={'_blank'}>MUI React framework</a>.
           </Box>
+          <ColorSystem/>
           <FontStack/>
           <Box sx={{mb:4}}></Box>
           <TypographySystem/>
