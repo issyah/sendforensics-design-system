@@ -12,13 +12,18 @@ export default function Public(props){
           {
             label: 'Try for free',
             href: '/pricing',
-            variant: 'soft',
+            // variant: 'soft',
             noStyle: true,
+            variant: 'contained',
+            color: 'primary',
           },
           {
             label: 'Login',
             href: '/login',
           }
+        ]}
+        navLeft={[
+
         ]}
         navLeft={[
           {
@@ -28,7 +33,14 @@ export default function Public(props){
         ]}
       />
       <Box>
-        <Toolbar/>
+        <Toolbar
+          sx={{
+            display:{
+              xs: 'block',
+              md: 'none'
+            }
+          }}
+        />
         {children}
       </Box>
     </Box>

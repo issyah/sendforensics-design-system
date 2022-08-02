@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { primary, secondary, white, success, error,info, warning } from './colors';
 import { grey } from '@mui/material/colors';
 // Create a theme instance.
@@ -185,4 +185,4 @@ const theme = createTheme({
   }
 });
 
-export default theme;
+export default responsiveFontSizes(theme);

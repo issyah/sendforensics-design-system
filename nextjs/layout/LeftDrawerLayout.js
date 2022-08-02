@@ -13,7 +13,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import LogoSvg from '../public/logo.svg';
-import Image from 'next/image';
+import Image from '../src/Image';
 import {styled} from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Link from '../src/Link';
