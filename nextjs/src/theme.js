@@ -1,6 +1,7 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { primary, secondary, white, success, error,info, warning } from './colors';
 import { grey } from '@mui/material/colors';
+import { shadows } from '@mui/system';
 // Create a theme instance.
 const theme = createTheme({
   palette: {
@@ -14,7 +15,9 @@ const theme = createTheme({
       main: '#fafafa',
       white: '#FFFFFF',
     },
-    grey:grey
+    // mode:'dark',
+    grey:grey,
+    shadows: shadows,
   },
   shape:{
     borderRadius:8
@@ -177,8 +180,10 @@ const theme = createTheme({
     MuiAppBar:{
       styleOverrides:{
         root:{
-          boxShadow:"none",
-          borderBottom: '2px solid #E7EBF0'
+          boxShadow: 'none',
+          borderBottomColor: grey[300],
+          borderBottomStyle: 'solid',
+          borderBottomWidth: 1
         }
       }
     }

@@ -17,8 +17,13 @@ import CheckIcon from '@mui/icons-material/Check';
 import Image from '../src/Image';
 import { styled } from '@mui/material';
 import Link from '../src/Link';
-import SocialProof from '../components/SocialProof';
+import SocialProof from '../components/Testimonials';
 import CarlJohn from '../public/images/carl-johann.jpeg';
+import IntegrationListImage from '../public/images/features/integration_list.png';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import blacklistCheckImage from '../public/images/features/blacklist.svg';
+import InboxPlacementImage from '../public/images/features/inbox-placement.svg';
+import PreviewImage from '../public/images/features/previews.png';
 export default function Index() {
   const UnorderedList = styled(List)({
       // marginBottom: 32,
@@ -78,6 +83,54 @@ export default function Index() {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path> <path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
         )
       }
+    },
+    {
+      image: blacklistCheckImage,
+      header: 'Find out immediately if your domain or IP is blacklisted',
+      featureList: [
+        'Check your domain or IP against the most influential blacklists',
+        'Follow actionable guidance to get delisted',
+        'Respond quickly with automatic Slack, email, or webhook alerts'
+      ],
+      subTitle: 'Blacklist Check',
+      href: '/features/blacklist-checker',
+      icon: () => {
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+        )
+      }
+    },
+    {
+      image: InboxPlacementImage,
+      header: 'Predict if your email goes to spam or the Promotion tab',
+      featureList:[
+        'Find and fix potential inbox placement problems',
+        'Run seed list test for Gmail, Yahoo, Outlook, and other major providers',
+        'Unlimited inbox placement tests'
+      ],
+      subTitle: 'Inbox Placement',
+      href: '/features/inbox-placement',
+      icon: () => {
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"></path></svg>
+        )
+      }
+    },
+    {
+      image: PreviewImage,
+      header: 'Perfect your email\'s design across devices and clients',
+      featureList:[
+        'Preview campaigns in popular email clients',
+        'Find design problems before sending',
+        'Test as much as your want with unlimited client preview tests'
+      ],
+      subTitle: 'Client Previews',
+      href: '/features/client-previews',
+      icon: () => {
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+        )
+      }
     }
   ]
 
@@ -128,38 +181,48 @@ export default function Index() {
           </Grid>
           <Grid item md={6}></Grid>
         </Grid>
+        <Box
+          sx={{
+            display: 'flex'
+          }}
+        >
         <Grid  
           container 
           alignItems={'center'} 
           spacing={8} 
           justifyContent='space-between'
           sx={{
-            my:4,
+            marginTop:0,
+          }}
+        >
+          <Grid item md={2} xs={4}>
+            <Image src={IntuitIcon} width="85" height="30" />
+          </Grid>
+          <Grid item md={2} xs={4}>
+            <Image src={LemonadeFashionIcon} width='300' height='59' />
+          </Grid>
+          <Grid item md={2} xs={4} sx={{
+            display: 'flex',
+            justifyContent:'center'
           }}>
-          <Grid item md={2} xs={4}>
-            <Image src={IntuitIcon} width="100%" height="40" layout="responsive" objectFit="contain"/>
+            <Image src={OneCampaignIcon} width='50' height='50'/>
           </Grid>
           <Grid item md={2} xs={4}>
-            <Image src={LemonadeFashionIcon} width="100%" height="40" layout="responsive" objectFit="contain"
-            />
+            <Image src={DellIcon} width='300' height='39'/>
           </Grid>
           <Grid item md={2} xs={4}>
-            <Image src={OneCampaignIcon} width="100%" height="40" layout="responsive" objectFit="contain"/>
+            <Image src={HeadwayIcon}  width='209' height='64'/>
           </Grid>
           <Grid item md={2} xs={4}>
-            <Image src={DellIcon} width='100%' height='40' layout='responsive' objectFit='contain'/>
-          </Grid>
-          <Grid item md={2} xs={4}>
-            <Image src={HeadwayIcon} width='100%' height='40' layout='responsive' objectFit='contain'/>
-          </Grid>
-          <Grid item md={2} xs={4}>
-            <Image src={ExperiaIcon} width='100%' height='40' layout='responsive' objectFit='contain'/>
+            <Image src={ExperiaIcon}  width='360' height='180'/>
           </Grid>
         </Grid>
+        </Box>
       </Container>
       <Box
         sx={{
-          bgcolor: 'grey.50'
+          bgcolor: 'grey.50',
+          py: 10,
         }}
       >
         <Container 
@@ -168,7 +231,6 @@ export default function Index() {
             sx={{
               display: 'flex',
               justifyContent:'center',
-              pt:10
             }}
           >
             <Typography
@@ -179,8 +241,6 @@ export default function Index() {
                 textAlign:'center',
                 mb:4,
                 width: {
-                  sm: '100%',
-                  md: '80%'
                 }
               }}
             >
@@ -207,13 +267,19 @@ export default function Index() {
               <Grid item md={6} xs={12}>
                 <Box 
                   sx={{
-                    minHeight: 350,
                     width: '100%',
                     position: 'relative',
                     display: 'block'
                   }}
                 >
-                  <Image src={item.image} width='100%' height='100%' layout='responsive' objectFit='contain'/>
+                  <Image 
+                    src={item.image} 
+                    width='100%' 
+                    height='100%' 
+                    layout='responsive'
+                    objectFit='contain'
+                    alt={item.header}
+                  />
                 </Box>
               </Grid>
               <Grid item md={6} xs={12}>
@@ -249,7 +315,7 @@ export default function Index() {
                   </Typography>
                 </Stack>
                 <Typography
-                  variant='h5'
+                  variant='h4'
                   gutterBottom
                 >
                   {item.header}
@@ -275,9 +341,7 @@ export default function Index() {
                   href={item.href}
                   variant='outlined'
                   color='primary'
-                  sx={{
-                    boxShadow: 'shadows[100]'
-                  }}
+                  endIcon={<ArrowForwardIcon/>}
                 >
                   Learn More
                 </Button>
@@ -290,7 +354,70 @@ export default function Index() {
         quote={'It\'s so much faster to find out how to improve our email campaigns with SendForensics.'}
         profilePhoto={CarlJohn}
         name={'Carl-Johan Larsson'}
-      />     
+        subtitle={'Founder, We Send Email'}
+      />
+      <Box
+        sx={{
+          bgcolor: 'grey.50',
+          py: 5,
+        }}
+      >
+        <Container>
+          <Grid
+            alignItems='center' 
+            justifyContent='space-between'
+            container
+            sx={{
+            }}
+            spacing={20}
+          >
+            <Grid item md={6} xs={12}>
+              <Typography
+                variant='h3'
+                gutterBottom
+              >
+                Connect to the tools you already use
+              </Typography>
+              <Typography
+                gutterBottom
+                sx={{
+                  mb:4,
+                }}
+              >
+                Automate tests with an ESP integrations, browser Google Postmaster Tools data, or build custom webhook notifications. Our integrations take deliverability monitoring to the next level.
+              </Typography>
+              <Button
+                component={Link}
+                href='/features/integration-list'
+                size='large'
+                variant='outlined'
+                endIcon={<ArrowForwardIcon/>}
+              >
+                Integration List
+              </Button>
+            </Grid>
+            <Grid 
+              item 
+              md={5} 
+              xs={12}
+              sx={{
+                '& .integration-list' : {
+                  filter: 'drop-shadow(0px 3px 1px rgba(0,0,0,.2))'
+                }
+              }}
+            >
+              <Image 
+                src={IntegrationListImage} 
+                width='100%' 
+                height={100} 
+                layout='responsive' 
+                objectFit='contain'
+                className='integration-list'
+                />
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>    
     </Public>
   );
 }

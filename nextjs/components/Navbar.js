@@ -12,7 +12,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import NavLink from './NavLink';
 import Link from '../src/Link';
-
+import MenuDropdown from './MenuDropdown';
 // logo 
 import Logo from './Logo';
 const drawerWidth = 240;
@@ -30,9 +30,11 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      {(navLeft && navLeft.length > 1) && 
+      {navLeft && 
         <List>
           {navLeft.map((item) => 
+            item.component ? 
+            item.component() : 
             <ListItem key={item.label}>
               <ListItemButton component={Link} href={item.href} sx={{textAlign:'center'}}>
                 <ListItemText primary={item.label} />
@@ -41,7 +43,7 @@ function DrawerAppBar(props) {
           )}
         </List>
       }
-      {nav && nav.length > 1 && 
+      {nav && 
         <List>
           {nav.map((item) => (
             <ListItem key={item.label}>
@@ -59,23 +61,22 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav" color='inherit'>
+      <AppBar 
+        component="nav" 
+        color='inherit'
+      >
         <Toolbar>
           <Container sx={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent:'space-between'}}
+            justifyContent:'space-between',
+            px: {
+              xs: 0,
+              md: 3
+            }
+          }}
             maxWidth={'lg'}  
           >
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerToggle}
-              sx={{display: { sm: 'none' } }}
-              edge='start'
-            >
-              <MenuIcon />
-            </IconButton>
             <Box
               sx={{
                 display: 'flex',
@@ -90,13 +91,25 @@ function DrawerAppBar(props) {
                   width: '200px',
                 }}I
               >
-                <Logo />
+                <Link 
+                  href='/' 
+                  noStyle 
+                  sx={{
+                    width: '100%',
+                    height:'100%',
+                    display: 'flex',
+                  }}
+                >
+                  <Logo />
+                </Link>
               </Box>
               {
                 (navLeft) && 
-                <Box sx={{display:{xs: 'none', sm: 'block'}}}>
+                <Box sx={{display:{xs: 'none', sm: 'flex'}}}>
                   {navLeft.map((item) => 
-                    <NavLink 
+                    item.component ? 
+                      item.component() :
+                      <NavLink 
                       key={item.label} 
                       variant={item.variant || 'inherit'}
                       href={item.href}>
@@ -106,6 +119,15 @@ function DrawerAppBar(props) {
                 </Box>
               }
             </Box>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerToggle}
+              sx={{display: { sm: 'none' } }}
+              edge='start'
+            >
+              <MenuIcon />
+            </IconButton>
             {
               (nav) &&
                 <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -131,6 +153,7 @@ function DrawerAppBar(props) {
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
+          anchor={'right'}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}

@@ -17,6 +17,7 @@ export default function Image(props) {
       {...props}
       layout={layout}
       loader={customLoader}
+      unoptimized
     />
   )
 }
