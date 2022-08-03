@@ -104,6 +104,12 @@ export default function Footer(props) {
             item
             md={3}
             xs={6}
+            sx={{
+              display: {
+                xs: 'none',
+                md: 'block',
+              }
+            }}
           >
             <Logo noText/>
           </Grid>
@@ -115,11 +121,15 @@ export default function Footer(props) {
               xs={6}
             >
               <FooterList
+                dense
               >
                 <ListItem>
                   <ListItemText>
                     <Typography
-                      variant='h6'
+                      variant='body1'
+                      sx={{
+                        fontWeight: '700'
+                      }}
                     >
                       {item.header}
                     </Typography>

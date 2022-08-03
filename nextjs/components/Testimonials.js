@@ -44,10 +44,18 @@ export default function SocialProof(props) {
               "{quote}"
             </Typography>
             <Stack
-              direction='row'
               alignItems={'center'}
               justifyContent={'center'}
               spacing={2}
+              sx={{
+                flexDirection: {
+                  xs: 'column',
+                  md: 'row'
+                },
+                gap:{
+                  md: 2
+                },
+              }}
             >
               {profilePhoto && 
                 <Box
@@ -76,6 +84,10 @@ export default function SocialProof(props) {
                 sx={{
                   height: 30,
                   borderWidth: 1,
+                  display: {
+                    xs: 'none',
+                    md: 'flex'
+                  }
                 }}
               />
               <Typography

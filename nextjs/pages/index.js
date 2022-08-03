@@ -193,6 +193,7 @@ export default function Index() {
           justifyContent='space-between'
           sx={{
             marginTop:0,
+            mb: 4,
           }}
         >
           <Grid item md={2} xs={4}>
@@ -322,7 +323,7 @@ export default function Index() {
                 </Typography>
                 <UnorderedList
                   sx={{
-                    mb:4,
+                    mb:2,
                   }}
                 >
                   {item.featureList.map((list, i) => 
@@ -339,9 +340,8 @@ export default function Index() {
                 <Button
                   component={Link}
                   href={item.href}
-                  variant='outlined'
+                  variant='contained'
                   color='primary'
-                  endIcon={<ArrowForwardIcon/>}
                 >
                   Learn More
                 </Button>
